@@ -1,5 +1,5 @@
 
-param storageAccountPrefix string
+param storageNamePrefix string
 param acr_name string = 'dareschoolacr'
 param asb_name string = 'dareschoolasb'
 param app_name string = 'dareschoolapp'
@@ -7,7 +7,7 @@ param app_name string = 'dareschoolapp'
 param location string = resourceGroup().location
 
 var asp_name = 'ASP-${app_name}'
-var stgacc_name = '${storageAccountPrefix}${uniqueString(resourceGroup().id)}'
+var stgacc_name = '${storageNamePrefix}${uniqueString(resourceGroup().id)}'
 
 resource storage_account 'Microsoft.Storage/storageAccounts@2023-01-01' = {
   name: stgacc_name
