@@ -27,5 +27,5 @@ jobs:
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ env.resourceGroupName }}
-          template: ./templates/deploy_envt.bicep
+          template: ./infra/templates/deploy_envt.bicep
           parameters: ./infra/envts/production/deploy_envt.parameters.json storageNamePrefix=${{ env.storageNamePrefix }}
