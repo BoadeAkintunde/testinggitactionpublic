@@ -12,10 +12,7 @@
    
       "app_name": {
           "value": "dareschoolap"
-      },
-      
-      "storageNamePrefix": {
-        "value": "dre"
+    
     }
   }
 }

@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env:
-  #storageNamePrefix: dre
   resourceGroupName: lab
-
+  storageNamePrefix: dre
+  
 jobs:
   infra-deploy:
     runs-on: ubuntu-latest
@@ -28,4 +28,4 @@ jobs:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
           resourceGroupName: ${{ env.resourceGroupName }}
           template: ./infra/templates/deploy_envt.bicep
-          parameters: ./infra/envts/production/deploy_envt.parameters.json 
+          parameters: ./infra/envts/production/deploy_envt.parameters.json storageNamePrefix=${{ env.storageNamePrefix }}
